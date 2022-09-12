@@ -8,3 +8,4 @@
 
 
 ###### ~~Welcome to my Repositorie~~ 
+*I am a current student of the upa, in this repository my activities will be registered during the course*
