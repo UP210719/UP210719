@@ -18,22 +18,22 @@ int main()
    cout << "Ingresa un numero entero: ";
    cin >> numero;
    if (numero == dato){
-   cout << "El número es igual a dato" << endl;
+        cout << "El número es igual a dato" << endl;
    }
     if (numero > dato){
-    cout <<"El numero es mayor al dato" << endl;
+        cout <<"El numero es mayor al dato" << endl;
     }
     if (numero < dato){
-    cout <<"El numero menor a dato" << endl;
+        cout <<"El numero menor a dato" << endl;
     }
     if (numero != dato){
-    cout <<"El numero es diferente al dato" <<endl;
+        cout <<"El numero es diferente al dato" <<endl;
     }
     if (numero <= dato){
-    cout <<"El numero es menor o igual al dato" <<endl;
+        cout <<"El numero es menor o igual al dato" <<endl;
      }
      if (numero >= dato){
-    cout <<"El nuermo es mayor o igual al dato" <<endl;
+        cout <<"El nuermo es mayor o igual al dato" <<endl;
      }
 
 
