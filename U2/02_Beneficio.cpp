@@ -3,6 +3,14 @@ Date: 26/09/2022
 Author: Eber Horacio JImenez Mendoza
 Email: up210719@alumnos.upa.edu.mx
 Description: Programa que otorga un bono de acuerdo a su calificacion final
+ Last modification:
+ Nivel
+ Nivel puntuacion
+ Bono de 2400 base a su calificacion anual
+ Inaceptable 0.0
+ Aceptable 0.4
+ Meritorio 0.6 o mas
+ Escribir un programa que lea la puntuacion
 */
 
 #include <iostream>
@@ -19,7 +27,6 @@ int main()
     }
     else if(calificacion == 0.4){
         cout<<"Tu bono anual es de : $" <<bono*0.4;
-        cout<<"Tu porcentaje del pago es %40 ";
     } 
     else if(calificacion >= 0.6){
         cout<<"Tu bono anual es de : $" <<bono*calificacion<<"pesos";
