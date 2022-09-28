@@ -1,7 +1,7 @@
 # UP210719_CPP
- # **Repositorio materia de programación**
- 
+ # **Programming stuff repository**
  ## ~~Eber Horacio Jimenez Mendoza~~ 
+ ## Welcome to my repositorie
  
 ![Esta es una imagen de ejemplo](https://github.com/UP210719/UP210719_CPP/blob/main/imagenes/images.jpeg)
 
@@ -11,7 +11,7 @@
 *I am a current student of the upa, in this repository my activities will be registered during the course*
 
 ## Main structure
-1. Introducción a la programación U1
-2. U2 Estructuras y ciclos de control
-3. Funciones U3
-4. Archivos y arreglos U4
+1. Introduction to programming U1
+2. U2 Structures and control cycles
+3.U3 functions
+4. Files and arrangements U4
