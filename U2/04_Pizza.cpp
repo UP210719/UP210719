@@ -17,43 +17,43 @@ int main()
 {
     char pizza;
     int ingrediente;
-    cout << "¿Quieres una pizza vegetariana? Todas nuestras pizzas llevan mozzarella y tomate\n Y/N \n";
+    cout << "Do you want a vegetarian pizza? All our pizzas have mozzarella and tomato\n Y/N \n";
     cin >> pizza;
 
     if (pizza == 'Y' || pizza == 'y')
     {
-        cout << " Estos son tus ingredientes para tu pizza vegetariana \n¿Cual desdea agregar? : \n 1.Pimiento \n 2.Tofu \n Escoge un ingrediente extra para agregar a tu pizza: ";
+        cout << " These are your ingredients for your vegetarian pizza \nWhich one do you want to add? : \n 1.Pepper \n 2.Tofu \n Choose an extra ingredient to add to your pizza: ";
         cin >> ingrediente;
 
-         cout << "Tu pizza es vegetariana, tus ingredientes son:" << endl;
+         cout << "-Your pizza is vegetarian, your ingredients are:" << endl;
 
         if (ingrediente == 1)
         {
-            cout << "-Tu ingrediente extra para tu pizza sera: Pimiento " << endl;
+            cout << "-Your extra ingredient for your pizza will be: Pepper " << endl;
         }
         else if (ingrediente == 2)
         {
-            cout << "-Tu ingrediente extra para tu pizza sera: Tofu " << endl;
+            cout << "-Your extra ingredient for your pizza will be: Tofu " << endl;
         }
 
        
     }
     else if (pizza == 'N' || pizza == 'n')
     {
-        cout << "Estos son tus otros ingredientes para tu pizza no vegetariana: \n 1.Peperoni \n 2.Jamon \n 3.Salmon \n Escoge un ingrediente extra para agregar a tu pizza: ";
+        cout << "These are your other ingredients for your non-veg pizza: \n 1.Peperoni \n 2.Jam \n 3.Salmon \n Choose an extra ingredient to add to your pizza: ";
         cin >> ingrediente;
 
         if (ingrediente == 1)
         {
-            cout << "-Tu ingrediente extra para tu pizza sera: Peperoni";
+            cout << "-Your extra ingredient for your pizza will be: Pepperoni";
         }
         else if (ingrediente == 2)
         {
-            cout << "-Tu ingrediente extra para tu pizza sera: Jamon";
+            cout << "-Your extra ingredient for your pizza will be: Jam";
         }
         else if (ingrediente == 3)
         {
-            cout << "-Tu ingrediente extra para tu pizza sera: Salmon";
+            cout << "-Your extra ingredient for your pizza will be: Salmon";
         }
     }
     else

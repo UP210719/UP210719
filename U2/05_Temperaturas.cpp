@@ -12,6 +12,8 @@ int main()
     int contador=0;
     float temperature;
     float tempAcum = 0;
+    float alta = ;
+    float baja = ;
     do{
         cout<<"Give me the temperature: ";
         cin >> temperature;

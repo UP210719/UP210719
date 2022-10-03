@@ -19,20 +19,20 @@ using namespace std;
 int main()
 {
     double calificacion,bono = 2400;
-    cout <<"Ingresa tu calificacion: \n 1. 0.0 \n 2. 0.4 \n 3. 0.6 \n Calificacion: ";
+    cout <<"Enter your qualification: \n 1. 0.0 \n 2. 0.4 \n 3. 0.6 \n Qualification: ";
     cin >> calificacion ;
 
     if(calificacion == 0){
-        cout <<"Tu bono anual es de $0 " << endl;
+        cout <<"Your annual bonus is $0 " << endl;
     }
     else if(calificacion == 0.4){
-        cout<<"Tu bono anual es de : $" <<bono*0.4;
+        cout<<"Your annual bonus is : $" <<bono*0.4;
     } 
     else if(calificacion >= 0.6){
-        cout<<"Tu bono anual es de : $" <<bono*calificacion<<"pesos";
+        cout<<"Your annual bonus is : $" <<bono*calificacion<<"pesos";
     }
     else{
-        cout<<"No toca nada amigo: ";
+        cout<<"Don't touch anything friend: ";
     }
 
     cout<<"\n";

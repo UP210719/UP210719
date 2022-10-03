@@ -17,19 +17,19 @@ using namespace std;
 int main()
 {
     int edad;
-    cout<<"¿Cuantos años tenes mi niño? = ";
+    cout<<"¿How old are you? = ";
     cin >> edad;
 
     if(edad>0 && edad<4){
-        cout<<"Tu entrada es gratis! \n";
+        cout<<"Your entry is free! \n";
     }
     else if (edad>=4 && edad<=18){
-        cout<<"Tienes que pagar $5, por favor \n";
+        cout<<"You have to pay $5 please \n";
     }
     else if(edad>18){
-        cout<<"Tienes que pagar $10 pesos, por favor \n";
+        cout<<"You have to pay $10 please \n";
     }else{
-        cout<<"Dato incorrecto";
+        cout<<"Wrong data";
     }
     return 0;
 
