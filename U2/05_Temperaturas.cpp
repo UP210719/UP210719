@@ -30,8 +30,8 @@ int main()
     }while (contador < 6);
 
     cout<<"The average of temperature today is: " <<tempAcum/6 << endl;
-    cout<<"The highest temperature is: "; <<maxtemperature << endl;
-    cout<<"The lowest temperature is: "; <<mintemperature << endl;
+    cout<<"The highest temperature is: "; << maxtemperature << endl;
+    cout<<"The lowest temperature is: "; << mintemperature << endl;
 
     return 0;
 
