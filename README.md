@@ -1,4 +1,4 @@
-# UP210719_CPP me encanta el pene negro
+# UP210719_CPP
  # **Programming stuff repository**
  ## ~~Eber Horacio Jimenez Mendoza~~ 
  ## Welcome to my repositorie
