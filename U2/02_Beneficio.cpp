@@ -9,7 +9,7 @@ Description: Programa que otorga un bono de acuerdo a su calificacion final
  Bono de 2400 base a su calificacion anual
  Inaceptable 0.0
  Aceptable 0.4
- Meritorio 0.6 o mas
+ Meritorio 0.6 o más
  Escribir un programa que lea la puntuacion
 */
 
