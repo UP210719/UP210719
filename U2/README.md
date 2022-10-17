@@ -42,4 +42,6 @@
 ![Image text](https://github.com/UP210719/UP210719_CPP/blob/main/imagenes/Captura%20de%20pantalla%20de%202022-10-17%2009-37-26.png)
 
 # **9-BISECTION** 
-*Cooming soon.*
+*Ultimate work pa.*
+
+![Image text](https://github.com/UP210719/UP210719_CPP/blob/main/imagenes/Captura%20de%20pantalla%20de%202022-10-17%2010-14-29.png)
