@@ -3,7 +3,7 @@ Unidad 2. Uso de ciclo Do While
 Author: Eber Horacio Jimenez Mendoza
 Date: 13/10/2022
 Description: 
-Last modification: 13/10/2022
+Last modification: 17/10/2022
 */
 #include <iostream>
 #include <cmath>
