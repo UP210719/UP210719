@@ -1,6 +1,6 @@
 # WELCOME TO MY UNIT 2: CONTROL STRUCTURES AND CYCLES
 
-# **1-RENTA**
+# **1-RENT**
 *In this program we sought to implement income and taxes.*
 
 ![Image text](https://github.com/UP210719/UP210719_CPP/blob/main/imagenes/Captura%20de%20pantalla%20de%202022-10-17%2009-30-52.png)
