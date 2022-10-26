@@ -27,7 +27,7 @@
 
 
 # **6-PRODUCTS**
-*In this program the bonuses for employees were shown by entering their qualification.*
+*This is a program that reads indefinitely quantities of products and their price, and at the end indicates the total of the invoice. To know that the purchase has been made, you must enter a 0 in the amount.*
 
 ![Image text](https://github.com/UP210719/UP210719_CPP/blob/main/imagenes/Captura%20de%20pantalla%20de%202022-10-17%2009-35-33.png)
 
@@ -37,11 +37,11 @@
 ![Image text](https://github.com/UP210719/UP210719_CPP/blob/main/imagenes/Captura%20de%20pantalla%20de%202022-10-17%2009-36-39.png)
 
 # **8-MULTIPLICATION TABLES**
-*In this you are asked for the number whose multiplication table you wanted to know and the structured table was shown.*
+*In this you are asked for the number whose multiplication table you wanted to know and the structured table was shown (if you type in this program a number it will ask you how many col you will need, then the program make a multiplication table with graphics) Write a program capable of asking the user to enter the number whose multiplication table he wants to see and what number the table will go to.*
 
 ![Image text](https://github.com/UP210719/UP210719_CPP/blob/main/imagenes/Captura%20de%20pantalla%20de%202022-10-17%2009-37-26.png)
 
 # **9-BISECTION** 
-*Ultimate work pa.*
+*We write a program capable of finding the root between two numbers entered by the user.*
 
 ![Image text](https://github.com/UP210719/UP210719_CPP/blob/main/imagenes/Captura%20de%20pantalla%20de%202022-10-17%2010-14-29.png)
