@@ -6,232 +6,402 @@ Description:  iIn this program we will try to make the cat game with a colorful 
 */
 
 #include <iostream>
-
+#include <stdalign.h>
+#include <time.h>
 using namespace std;
 
 void hacertablero();
-char Gato[3][3] = {{'1','2','3'},{'4','5','6'},{'7','8','9'}};
-bool ComprobarJugada(int jugada);
 int seleccionarJugada();
-void colocarlajugada(int);
-bool comprobarganador();
+bool comprobarJugada(int, string);
+void colocarJugada(int, string, string);
+bool ganar(string);
+int obtenerJugadaPC();
 
+void clonarMatriz();
+int obtenerMejorJugadade(string);
+char estructuraGato[6][11];
+char areaJuego[3][3] = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
+char areaJuegoPC[3][3];
+int turnoJugador = 1;
 int row, col;
-int turno = 1;
-int ganador;
+const string PC = "Maquina";
+const string HUMANO = "Humano";
+const string TABLERO = "Real";
+const string TABLEROIMAG = "Imaginario";
 
-
-int main(){
+int main()
+{
+    bool gameover = false;
     int jugada;
-    bool juegoterminado = false;
-    bool CasillaOcupada = true;
-    char juego;
-    char jugador1[20];
-    char jugador2[20];
-
-
-    cout << "Juego de Gato " << endl;
-    cout << "Presione Y para jugar y N para salir: "; 
-    cin >> juego;
+    bool casillaOcupada = true;
+    int modo;
+    cout << "Tic tac toe \n";
+    cout << "1 Singleplayer \n";
+    cout << "2 Multiplayer \n";
+    cout << "Which mode are you going to play (number)? \n";
+    cin >> modo;
     
-
-    system("cls");
-
-    cout << "Bienvenido Jugador 1 dame tu nombre: " << endl;
-    cin >> jugador1;
-
-    system("cls");
-
-    cout << "Bienvenido Jugador 2 dame tu nombre: " << endl;
-    cin >> jugador2;
-
-    if(juego == 'Y' || juego == 'y'){
-        do{
-        system("cls");
-        hacertablero();
-        do{
-            jugada = seleccionarJugada();
-            CasillaOcupada = ComprobarJugada(jugada);
-            if(CasillaOcupada == true){
-                cout << "Otra Vez \n";
-                hacertablero();
+    if (modo == 1)
+    {
+        do
+        {
+            system("clear");
+            if (turnoJugador % 2 == !0)
+            {
+                do
+                {
+                    hacertablero();
+                    jugada = seleccionarJugada();
+                    casillaOcupada = comprobarJugada(jugada, TABLERO);
+                    if (casillaOcupada == true)
+                    {
+                        system("clear");
+                        cout << "Trye again \n";
+                    }
+                } while (casillaOcupada == true);
+                colocarJugada(jugada, TABLERO, HUMANO);
+                gameover = ganar(TABLERO);
             }
-        }while(CasillaOcupada == true);
-        colocarlajugada(jugada);
-    
-       juegoterminado = comprobarganador();
-      
-    }while(juegoterminado == false and turno < 10);
+            else
+            {
+                hacertablero();
+                jugada = obtenerJugadaPC();
+                colocarJugada(jugada, TABLERO, PC);
+                gameover = ganar(TABLERO);
+            }
+        } while (gameover == false and turnoJugador < 10);
+        system("clear");
+        hacertablero();
+    }
+    else if (modo == 2)
+    {
+        do
+        {
+            system("clear");
+            do
+            {
+                hacertablero();
+                jugada = seleccionarJugada();
+                casillaOcupada = comprobarJugada(jugada, TABLERO);
+                if (casillaOcupada == true)
+                {
+                    system("clear");
+                    cout << "Trye again \n";
+                }
+            } while (casillaOcupada == true);
+            colocarJugada(jugada, TABLERO, HUMANO);
+            gameover = ganar(TABLERO);
+        } while (gameover == false and turnoJugador < 10);
+        system("clear");
+        hacertablero();
+    }
+    else
+    {
+        cout << "Gamer over";
+    }
 
-    system("cls");
-    hacertablero();
-
-    if(juegoterminado == true){
-        if((turno - 1) %2 == 0){
-            cout << "Gano el jugador " << jugador2 << endl;
-        }else{
-            cout << "Gano el jugador " << jugador1 << endl;
+    if (gameover == true)
+    {
+        if (turnoJugador % 2 == 0)
+        {
+            cout << "Player 1 won" << endl;
+        }
+        else
+        {
+            if (modo == 1)
+            {
+                cout << "PC won";
+            }
+            else
+            {
+                cout << "Player 2 won" << endl;
+            }
         }
     }
-    else{
-            cout << "Empate";
-        }
-    }else{
-        system("cls");
-        cout << "El juego se termino";
+    else if (gameover == false and turnoJugador >= 9)
+    {
+        cout << "Tie" << endl;
     }
-    
-
     return 0;
 }
 
-void hacertablero(){
-    int row = 0;
-    int col = 0;
-    
-    for(int fila = 0; fila < 6; fila++){
-        for(int columna = 0; columna < 3; columna++){
-            if(fila < 5 && fila % 2 == 1){
-                cout << "___";
-            }else{
-                
-                if(fila < 5){
-                    cout << " " << Gato[row][col] << " ";
-                    col++;
-                }else{
-                    cout << "   ";
+void hacertablero()
+{
+    row = 0;
+    col = 0;
+    for (int row1 = 0; row1 < 6; row1++)
+    {
+        for (int col1 = 0; col1 < 11; col1++)
+        {
+            if (col1 == 3 || col1 == 7)
+            {
+                estructuraGato[row1][col1] = '|';
+            }
+            else if (row1 == 1 || row1 == 3)
+            {
+                estructuraGato[row1][col1] = '_';
+            }
+            else if (row1 != 5 && (col1 == 1 || col1 == 5 || col1 == 9))
+            {
+                estructuraGato[row1][col1] = areaJuego[row][col];
+                col++;
+                if (col == 3)
+                {
+                    col = 0;
+                    row++;
                 }
             }
-            
-            if(columna < 2){
-                cout << "|";
+            else
+            {
+                estructuraGato[row1][col1] = ' ';
             }
-          
-        }
-        col = 0;
-        if(fila % 2 == 0){
-            row++;
-        }
-       
-       cout << endl;
-    }
-    
-}
-
-bool ComprobarJugada(int jugada){
-    if(jugada == 1){
-        row = 0;
-        col = 0;
-    }else if(jugada == 2){
-        row = 0;
-        col = 1;
-    }else if(jugada == 3){
-        row = 0;
-        col = 2;
-    }else if(jugada == 4){
-        row = 1;
-        col = 0;
-    }else if(jugada == 5){
-        row = 1;
-        col = 1;
-    }else if(jugada == 6){
-        row = 1;
-        col = 2;
-    }else if(jugada == 7){
-        row = 2;
-        col = 0;
-    }else if(jugada == 8){
-        row = 2;
-        col = 1;
-    }else if(jugada == 9){
-        row = 2;
-        col = 2;
-    }
-    if(Gato[row][col] == 'O' || Gato[row][col] == 'X'){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-int seleccionarJugada(){
-    int jugada;
-
-    cout << "OPCIONES DE JUEGO" << endl;
-
-    for(int fila = 0; fila < 3; fila++){
-        for(int columna = 0; columna < 3; columna++){
-            cout << "[" << fila << ", " << columna << "]";
-            cout << endl;
         }
     }
-
-   do{
-     cout << "Dame tu jugada: ";
-     cin >> jugada;  
-   }while(jugada > 9 && jugada < 0);
-   return jugada; 
-
+    for (int row1 = 0; row1 < 6; row1++)
+    {
+        for (int col1 = 0; col1 < 11; col1++)
+        {
+            if (estructuraGato[row1][col1] == 'X')
+            {
+                cout << "\033[0;31m" << estructuraGato[row1][col1] << "\033[0m";
+            }
+            else if (estructuraGato[row1][col1] == 'O')
+            {
+                cout << "\033[0;32m" << estructuraGato[row1][col1] << "\033[0m";
+            }
+            else
+            {
+                cout << estructuraGato[row1][col1];
+            }
+        }
+        cout << endl;
+    }
 }
 
-void colocarlajugada(int jugada){
-    char seleccionJugada;
-    if(turno % 2 == 0){
-        seleccionJugada = 'O';
-    }else{
-        seleccionJugada = 'X';
-    }
-
-    if(jugada == 1){
-        Gato[0][0] = seleccionJugada;
-    }else if(jugada == 2){
-        Gato[0][1] = seleccionJugada;
-    }else if(jugada == 3){
-        Gato[0][2] = seleccionJugada;
-    }else if(jugada == 4){
-        Gato[1][0] = seleccionJugada;
-    }else if(jugada == 5){
-        Gato[1][1] = seleccionJugada;
-    }else if(jugada == 6){
-        Gato[1][2] = seleccionJugada;
-    }else if(jugada == 7){
-        Gato[2][0] = seleccionJugada;
-    }else if(jugada == 8){
-        Gato[2][1] = seleccionJugada;
-    }else if(jugada == 9){
-        Gato[2][2] = seleccionJugada;
-    }
-    turno++;
+int seleccionarJugada()
+{
+    int jugada1;
+    do
+    {
+        cout << "Give  me your move: ";
+        cin >> jugada1;
+    } while (jugada1 > 9 && jugada1 < 0);
+    return jugada1;
 }
 
-bool comprobarganador(){
+bool comprobarJugada(int jugada, string tablero)
+{
+    bool casillaOcupada = false;
+    int fila = 0, columna = 0;
+    for (int numjuada = 1; numjuada < 10; numjuada++)
+    {
+        if (jugada == numjuada)
+        {
+            row = fila;
+            col = columna;
+            break;
+        }
+        else
+        {
+            columna++;
+            if (columna == 3)
+            {
+                columna = 0;
+                fila++;
+            }
+        }
+    }
+    if (tablero == TABLERO)
+    {
+        if (areaJuego[row][col] == 'O' || areaJuego[row][col] == 'X')
+        {
+            casillaOcupada = true;
+        }
+    }
+    else if (tablero == TABLEROIMAG)
+    {
+        if (areaJuegoPC[row][col] == 'O' || areaJuegoPC[row][col] == 'X')
+        {
+            casillaOcupada = true;
+        }
+    }
+    return casillaOcupada;
+}
+
+void colocarJugada(int jugada, string tablero, string Jugador)
+{
+    char valorJugada;
+    if (turnoJugador % 2 == 0)
+    {
+        valorJugada = 'X';
+    }
+    else
+    {
+        valorJugada = 'O';
+    }
+    int fila = 0, columna = 0;
+    for (int numjuada = 1; numjuada < 10; numjuada++)
+    {
+        if (jugada == numjuada)
+        {
+            if (tablero == TABLERO)
+            {
+                areaJuego[fila][columna] = valorJugada;
+                break;
+            }
+            else if (tablero == TABLEROIMAG)
+            {
+                if (Jugador == HUMANO)
+                {
+                    valorJugada = 'O';
+                }
+                else if (Jugador == PC)
+                {
+                    valorJugada = 'X';
+                }
+                areaJuegoPC[fila][columna] = valorJugada;
+                break;
+            }
+        }
+        else
+        {
+            columna++;
+            if (columna == 3)
+            {
+                columna = 0;
+                fila++;
+            }
+        }
+    }
+    if (tablero == TABLERO){
+        turnoJugador++;
+    }
+}
+
+bool ganar(string tablero)
+{
     bool ganar = false;
-     if(Gato[0][0] == 'X' && Gato[0][0] == Gato[0][1] && Gato[0][0] == Gato[0][2]
-    || Gato[1][0] == 'X' && Gato[1][0] == Gato[1][1] && Gato[1][0] == Gato[1][2]
-    || Gato[2][0] == 'X' && Gato[2][0] == Gato[2][1] && Gato[2][0] == Gato[2][2]
-    
-    || Gato[0][0] == 'X' && Gato[0][0] == Gato[1][0] && Gato[0][0] == Gato[2][0]
-    || Gato[0][1] == 'X' && Gato[0][1] == Gato[1][1] && Gato[0][1] == Gato[2][1]
-    || Gato[0][2] == 'X' && Gato[0][2] == Gato[1][2] && Gato[0][2] == Gato[2][2]
-    
-    || Gato[0][0] == 'X' && Gato[0][0] == Gato[1][1] && Gato[0][0] == Gato[2][2]
-    || Gato[0][2] == 'X' && Gato[0][2] == Gato[1][1] && Gato[0][2] == Gato[2][0]){
+    for (int posicion = 0; posicion < 3; posicion++)
+    {
+        if (tablero == TABLERO)
+        {
+            if (areaJuego[posicion][0] == areaJuego[posicion][1] && areaJuego[posicion][posicion] == areaJuego[posicion][2] && areaJuego[posicion][1] == areaJuego[posicion][2])
+            {
+                ganar = true;
+                break;
+            }
+            if (areaJuego[0][posicion] == areaJuego[1][posicion] && areaJuego[0][posicion] == areaJuego[2][posicion] && areaJuego[1][posicion] == areaJuego[2][posicion])
+            {
+                ganar = true;
+                break;
+            }
+        }
+        else if (tablero == TABLEROIMAG)
+        {
+            if (areaJuegoPC[posicion][0] == areaJuegoPC[posicion][1] && areaJuegoPC[posicion][posicion] == areaJuegoPC[posicion][2] && areaJuegoPC[posicion][1] == areaJuegoPC[posicion][2])
+            {
+                ganar = true;
+                break;
+            }
+            if (areaJuegoPC[0][posicion] == areaJuegoPC[1][posicion] && areaJuegoPC[0][posicion] == areaJuegoPC[2][posicion] && areaJuegoPC[1][posicion] == areaJuegoPC[2][posicion])
+            {
+                ganar = true;
+                break;
+            }
+        }
+    }
+    if (tablero == TABLERO)
+    {
+        if (areaJuego[0][0] == areaJuego[1][1] && areaJuego[0][0] == areaJuego[2][2] && areaJuego[1][1] == areaJuego[2][2]) 
+        {
             ganar = true;
+        }
+        else if (areaJuego[2][0] == areaJuego[1][1] && areaJuego[2][0] == areaJuego[0][2] && areaJuego[0][2] == areaJuego[1][1])
+        {
+            ganar = true;
+        }
+    } 
+    else if (tablero == TABLEROIMAG)
+    {
+        if (areaJuegoPC[0][0] == areaJuegoPC[1][1] && areaJuegoPC[0][0] == areaJuegoPC[2][2] && areaJuegoPC[1][1] == areaJuegoPC[2][2])
+        {
+            ganar = true;
+        }
+        else if (areaJuegoPC[2][0] == areaJuegoPC[1][1] && areaJuegoPC[2][0] == areaJuegoPC[0][2] && areaJuegoPC[0][2] == areaJuegoPC[1][1])
+        {
+            ganar = true;
+        }
     }
-    if(Gato[0][0] == 'O' && Gato[0][0] == Gato[0][1] && Gato[0][0] == Gato[0][2]
-    || Gato[1][0] == 'O' && Gato[1][0] == Gato[1][1] && Gato[1][0] == Gato[1][2]
-    || Gato[2][0] == 'O' && Gato[2][0] == Gato[2][1] && Gato[2][0] == Gato[2][2]
-    
-    || Gato[0][0] == 'O' && Gato[0][0] == Gato[1][0] && Gato[0][0] == Gato[2][0]
-    || Gato[0][1] == 'O' && Gato[0][1] == Gato[1][1] && Gato[0][1] == Gato[2][1]
-    || Gato[0][2] == 'O' && Gato[0][2] == Gato[1][2] && Gato[0][2] == Gato[2][2]
-    
-    || Gato[0][0] == 'O' && Gato[0][0] == Gato[1][1] && Gato[0][0] == Gato[2][2]
-    || Gato[0][2] == 'O' && Gato[0][2] == Gato[1][1] && Gato[0][2] == Gato[2][0]){
-        ganar = true;
-    }
-     
-
     return ganar;
+}
 
+int obtenerJugadaPC()
+{
+    bool casillaOcupada = false;
+    int jugada;
+    srand(time(NULL));
+    jugada = obtenerMejorJugadade(PC);
+    if (jugada != -1)
+    {
+        return jugada;
+    }
+    jugada = obtenerMejorJugadade(HUMANO);
+    if (jugada != -1)
+    {
+        return jugada;
+    }
+    do
+    {
+        jugada= 1 + rand() % 9;
+        casillaOcupada= comprobarJugada (jugada,TABLERO);
+    }while (casillaOcupada == true);
+    return jugada;
+}
+
+void clonarMatriz(){
+    for (int fila = 0; fila < 3; fila++)
+    {
+        for (int columna = 0; columna < 3; columna++)
+        {
+            areaJuegoPC[fila][columna] = areaJuego[fila][columna];
+        }
+    }
+}
+
+int obtenerMejorJugadade(string jugador)
+{
+    bool casillaOcupada = false;
+    bool gameover = false;
+    int jugada = 0;
+    clonarMatriz();
+    if (jugador == PC)
+    {
+        do
+        {
+            jugada++;
+            casillaOcupada=comprobarJugada(jugada, TABLEROIMAG);
+            if (casillaOcupada == false){
+                colocarJugada(jugada, TABLEROIMAG, PC);
+                gameover = ganar(TABLEROIMAG);
+            }
+            clonarMatriz();
+        } while (jugada <= 9 && gameover == false);
+    } 
+    else if (jugador == HUMANO)
+    {
+        do
+        {
+            jugada++;
+            casillaOcupada=comprobarJugada(jugada, TABLEROIMAG);
+            if (casillaOcupada== false){
+                colocarJugada(jugada, TABLEROIMAG, HUMANO);
+                gameover = ganar(TABLEROIMAG);
+            }
+            clonarMatriz();
+        } while (jugada <= 9 && gameover == false);
+    }
+    if (jugada >= 10){
+        jugada= -1;
+    }
+    return jugada;
 }
