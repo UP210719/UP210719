@@ -122,4 +122,4 @@ int getmaxval(int num1, int num2){
 # **3-CAT´S GAME**
 *In this program it was possible to carry out the game of the cat where two players were needed, who even asked for the name of each one, a table was listed with the different plays to be placing their movements and since someone joined their three in a row is the winner and the same program indicates it to you.*
 
-![Image text]()
+![Image text](https://github.com/UP210719/UP210719_CPP/blob/main/imagenes/Captura%20de%20pantalla%20de%202022-07-05%2010-10-36.png)
