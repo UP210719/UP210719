@@ -137,9 +137,9 @@ int getmaxval(int num1, int num2){
 *In this game you can select two players, player A and player B, where either "x" or "0" will be selected, it depends on the player's choice to previously play on the printed table by selecting the space in which they want to place their respective movement.*
 
 # **2-Things of consider**
-*>One player: The player will go first and then the intelligence assuming that the player will be "x" and the cpu "0".*
+*>One player: The player will go first and then the intelligence assuming that the player will be "0" and the CPU "X".*
 
-*>Vs someone: The machine recognizes that player one gets "x" and player two gets "0".*
+*>Vs someone: The machine recognizes that player one gets "0" and player two gets "X".*
 
 ## Possible mistake
 *This program may have some flaws since there will always be some vulnerability.
@@ -155,7 +155,23 @@ int getmaxval(int num1, int num2){
 
 *In this code too many lines of text were used since it had too many flaws which had to be covered.
 In it, the table of the cat was printed giving numbers to each box from 1 to 9 so that each player selects the box that is most convenient for him.
-The program gave you to choose player 1 with the "x" and player 2 with "0". When you play against the machine it is automatically assigned the "0" and the player the "x". At the end the winning player is printed.*
+The program gave you to choose player 1 with the "0" and player 2 with "X". When you play against the machine it is automatically assigned the "X" and the player the "0". At the end the winning player is printed.*
+
+![Image text](https://github.com/UP210719/UP210719_CPP/blob/main/imagenes/Captura%20de%20pantalla%20de%202022-11-18%2009-29-17.png)
+
+*Here we are choosing whether to play with the machine or with a friend, in this case it is against the CPU in which we will choose the first option.*
+
+![Image text](https://github.com/UP210719/UP210719_CPP/blob/main/imagenes/Captura%20de%20pantalla%20de%202022-11-18%2009-33-02.png)
+
+*Well, here is the representation of how I lost against the machine and where my assigned player was the "0".*
+
+![Image text](https://github.com/UP210719/UP210719_CPP/blob/main/imagenes/Captura%20de%20pantalla%20de%202022-11-18%2009-34-34.png)
+
+*In this case we are playing with a friend where the second option will be selected as printed in the program so that player one is "0" and player two is "X".*
+
+![Image text](https://github.com/UP210719/UP210719_CPP/blob/main/imagenes/Captura%20de%20pantalla%20de%202022-11-18%2009-35-27.png)
+
+*Lastly, we have that the winner was player 1 where this is implicitly made to the last of the table.*
 
 # **5-Ending**
 *In this unit 3 project we were in too much constant work since it was a fairly extensive program and with many delays because it was failure after failure, which is pure trial and error programming.
