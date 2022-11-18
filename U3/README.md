@@ -147,7 +147,7 @@ int getmaxval(int num1, int num2){
 2-If it moves in the slightest it can move from place or enter unwanted values.*
 
 # **3-Flowchart**
-*
+![Image text](https://github.com/UP210719/UP210719_CPP/blob/main/imagenes/00718a57-8398-47e1-90a7-b8a23d2e914c.jpeg)
 
 # **4-Code and explanation**
 
