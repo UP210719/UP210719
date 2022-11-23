@@ -121,9 +121,9 @@ int getmaxval(int num1, int num2){
 
 # **THE MOST IMPORTANT: CAT´S GAME**
 ## Index
-*1-How to run*
+[*1-How to run*](#1-How_to_run)  
 
-*2-Things of consider*
+[*2-Things of consider*](#2-Things_of_consider)
 
 *3-Flowchart*
 
