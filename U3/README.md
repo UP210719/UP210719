@@ -180,3 +180,5 @@ The program gave you to choose player 1 with the "0" and player 2 with "X". When
 It was too much fun because we had a lot of collaboration and teamwork, helping each other to solve doubts among themselves, without a doubt, despite the stress that it generated for us, we were able to obtain a result that was not so satisfactory but adequate to have a good grade in this unit.*
 
 [Index](#index)
+
+    *Thanks for watching Mr.Anaya.*
