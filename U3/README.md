@@ -181,4 +181,4 @@ It was too much fun because we had a lot of collaboration and teamwork, helping 
 
 [Index](#index)
 
-    *Thanks for watching Mr.Anaya.*
+*Thanks for watching Mr.Anaya.*
