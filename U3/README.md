@@ -125,15 +125,15 @@ int getmaxval(int num1, int num2){
 
 [*2-Things of consider*](#2-Things_of_consider)
 
-*3-Flowchart*
+[*3-Flowchart*](#3-Flowchart)
 
-*4-Code and explanation*
+[*4-Code and explanation*](#4-Code_and_explanation)
 
-*5-Ending*
+[*5-Ending*](#5-Ending)
 
 
 
-# **1-How to run**
+<h2># **1-How to run**<h2>
 *In this game you can select two players, player A and player B, where either "x" or "0" will be selected, it depends on the player's choice to previously play on the printed table by selecting the space in which they want to place their respective movement.*
 
 # **2-Things of consider**
