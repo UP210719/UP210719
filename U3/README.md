@@ -121,7 +121,7 @@ int getmaxval(int num1, int num2){
     return (num1> num2)?num1:num2;
 }
 
-# **THE MOST IMPORTANT: CAT´S GAME**
+# **THE MOST IMPORTANT: CAT´S GAME**  🐱
 ## Index
 [*1-How to run*](#1-how-to-run)  
 
@@ -135,23 +135,23 @@ int getmaxval(int num1, int num2){
 
 
 
-# **1-How to run**
+# **1-How to run**  🏃🏽
 *In this game you can select two players, player A and player B, where either "x" or "0" will be selected, it depends on the player's choice to previously play on the printed table by selecting the space in which they want to place their respective movement.*
 
-# **2-Things of consider**
+# **2-Things of consider**  🤔
 *>One player: The player will go first and then the intelligence assuming that the player will be "0" and the CPU "X".*
 
 *>Vs someone: The machine recognizes that player one gets "0" and player two gets "X".*
 
-## Possible mistake
+## Possible mistake  😨
 *This program may have some flaws since there will always be some vulnerability.
 1-This can be returned in an infinite loop if a number with decimal is entered or also if a letter is entered.
 2-If it moves in the slightest it can move from place or enter unwanted values.*
 
-# **3-Flowchart**
+# **3-Flowchart** 🤑
 ![Image text](https://github.com/UP210719/UP210719_CPP/blob/main/imagenes/00718a57-8398-47e1-90a7-b8a23d2e914c.jpeg)
 
-# **4-Code and explanation**
+# **4-Code and explanation**  🤷
 
 ![Image text](https://github.com/UP210719/UP210719_CPP/blob/main/imagenes/Captura%20de%20pantalla%20de%202022-11-17%2010-24-22.png)
 
@@ -175,10 +175,10 @@ The program gave you to choose player 1 with the "0" and player 2 with "X". When
 
 *Lastly, we have that the winner was player 1 where this is implicitly made to the last of the table.*
 
-# **5-Ending**
+# **5-Ending**  🎓
 *In this unit 3 project we were in too much constant work since it was a fairly extensive program and with many delays because it was failure after failure, which is pure trial and error programming.
 It was too much fun because we had a lot of collaboration and teamwork, helping each other to solve doubts among themselves, without a doubt, despite the stress that it generated for us, we were able to obtain a result that was not so satisfactory but adequate to have a good grade in this unit.*
 
 [Index](#index)
 
-*Thanks for watching Mr.Anaya.*
+✨  *Thanks for watching Mr.Anaya.*  ✨
