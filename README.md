@@ -11,7 +11,7 @@
 *I am a current student of the upa, in this repository my activities will be registered during the course*
 
 ## Main structure
-1. Introduction to programming U1
-2. U2 Structures and control cycles
-3. U3 functions
-4. Files and arrangements U4
+📂1. Introduction to programming U1
+📂2. U2 Structures and control cycles
+📂3. U3 functions
+📂4. Files and arrangements U4
