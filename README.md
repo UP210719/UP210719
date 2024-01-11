@@ -1,4 +1,4 @@
-# UP210719_CPP
+# UP210719
  # **WEB PROGRAMMING**
  ## ~~Eber Horacio Jimenez Mendoza~~ 
  ## Welcome to my repositorie
@@ -11,13 +11,13 @@
 *I am a current student of the upa, in this repository my activities will be registered during the course*
 
 ## Main structure
-📂1. U1 Introduction to programming
+📂1. U1
 
-📂2. U2 Structures and control cycles
+📂2. U2 
 
-📂3. U3 functions
+📂3. U3 
 
-📂4. U4 Files and arrangements 
+📂4. U4 
 
 
 
